@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="../InventoryManagerApp/InventoryManagerApp.csproj" Id="55108410-c3c5-446a-95a4-53371e075479" />
+  <Project Path="InventoryManagerAPI/InventoryManagerAPI.csproj" />
+</Solution>

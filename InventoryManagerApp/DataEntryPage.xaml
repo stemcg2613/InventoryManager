@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="InventoryManagerApp.DataEntryPage"
+             Title="Data Entry">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30"
+            Spacing="15">
+
+            <Label
+                Text="Inventory Data Entry"
+                FontSize="28"
+                FontAttributes="Bold"
+                HorizontalOptions="Center" />
+
+            <Entry
+                x:Name="txtItemID"
+                Placeholder="Item ID" />
+
+            <Entry
+                x:Name="txtItemName"
+                Placeholder="Item Name" />
+
+            <Editor
+                x:Name="txtItemDescription"
+                Placeholder="Item Description"
+                HeightRequest="100" />
+
+            <Button
+                Text="Save"
+                Clicked="OnSaveClicked" />
+
+            <Label
+                Text="Saved Items"
+                FontSize="22"
+                FontAttributes="Bold"
+                Margin="0,20,0,0" />
+
+            <CollectionView
+                x:Name="itemsCollectionView"
+                HeightRequest="300">
+
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Border
+                            StrokeThickness="1"
+                            Padding="10"
+                            Margin="0,5">
+
+                            <VerticalStackLayout Spacing="5">
+
+                                <Label
+                                    Text="{Binding ItemID}"
+                                    FontAttributes="Bold" />
+
+                                <Label
+                                    Text="{Binding ItemName}" />
+
+                                <Label
+                                    Text="{Binding ItemDescription}" />
+
+                            </VerticalStackLayout>
+
+                        </Border>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+
+            </CollectionView>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
